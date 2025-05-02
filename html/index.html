@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClosetBay</title>
+
+    <!--Icons-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- BOOTSTRAP CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!-- FONTS -->
+    <link rel="stylesheet" href="../css/fonts.css" />
+
+    <!-- SWIPER CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <!-- NAV START -->
+    <nav class="navbar navbar-expand-md bg-transparent">
+      <div class="container-fluid bg-transparent">
+        <a class="navbar-brand fw-bolder fs-2" href="../html/index.html"
+          >ClosetBay</a
+        >
+
+        <div class="d-flex align-items-center">
+          <a
+            class="nav-link d-md-none me-3 position-relative"
+            href="../html/cart.html"
+            ><img src="../img/bag.svg" alt="" class="nav-icon" />
+            <span
+              class="nav-cart-icon-badge-mobile rounded-pill bg-danger position-absolute text-center text-white"
+            ></span>
+          </a>
+          <a
+            class="nav-link d-md-none me-3 position-relative"
+            href="../html/cart.html"
+            ><img src="../img/favourite.svg" alt="" class="nav-icon" />
+            <span
+              class="nav-fav-icon-badge-mobile rounded-pill bg-danger position-absolute text-center text-white"
+            ></span>
+          </a>
+          <a
+            class="nav-link d-md-none me-3 position-relative"
+            class="nav-link"
+            href="#"
+            data-bs-toggle="modal"
+            data-bs-target="#loginModal"
+            ><img src="../img/profile.svg " alt="" class="nav-icon" />
+          </a>
+          <button
+            class="navbar-toggler fs-6"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav fs-5 align-items-start">
+            <li class="nav-item">
+              <a class="nav-link" href="../html/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../html/about.html">About</a>
+            </li>
+            <li class="nav-item d-none d-md-block">
+              <a
+                class="cart-nav-link nav-link d-flex align-items-center position-relative"
+                onclick="cartNavLink()"
+                ><img src="../img/bag.svg " alt="" class="nav-icon" />
+                <span
+                  class="nav-cart-icon-badge rounded-pill bg-danger position-absolute translate-middle text-center text-white"
+                ></span>
+              </a>
+            </li>
+            <li class="nav-item d-none d-md-block">
+              <a
+                class="nav-link d-flex align-items-center position-relative"
+                href="#"
+                ><img src="../img/favourite.svg " alt="" class="nav-icon" />
+                <span
+                  class="nav-fav-icon-badge rounded-pill bg-danger position-absolute translate-middle text-center text-white"
+                ></span>
+              </a>
+            </li>
+            <li class="nav-item d-none d-md-block">
+              <a
+                class="profile-nav-link nav-link d-flex align-items-center position-relative"
+                onclick="updateProfileNavLink()"
+                ><img src="../img/profile.svg " alt="" class="nav-icon" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- NAV END -->
+
+    <!-- LOGIN MODAL -->
+    <div id="loginModalContainer"></div>
+
+    <!-- TOAST MESSAGE -->
+    <div
+      class="snackbar bg-black text-light text-center p-2 m-auto d-flex align-items-center rounded-2"
+    >
+      <h6 id="snackbar-content" class="text-start m-auto">cxc</h6>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="row g-0 p-3 align-items-center">
+        <div class="hero-content col-12 col-lg-6 text-center text-md-start">
+          <h1>Find Clothes That Matches Your Style</h1>
+          <p>
+            Browse through our diverse range of meticulously crafted garments,
+            designed to bring out your individuality and cater to your sense of
+            style.
+          </p>
+        </div>
+        <div class="col-12 col-lg-6">
+          <img
+            src="../img/home-main.png"
+            alt="Hero Image"
+            class="w-100 h-100 rounded-5"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW ARRIVAL SECTION -->
+    <section>
+      <div class="container justify-content-center">
+        <div class="new-arrival">
+          <h1 class="mt-4">NEW ARRIVAL</h1>
+          <div id="newArrivalPdtList" class="row p-4 align-items-center">
+            <div class="product-card-template col-lg-3 col-sm-6 mb-4 d-none">
+              <a class="product-link position-relative" href="#">
+                <img
+                  src=""
+                  alt="brand"
+                  class="img-fluid rounded-4 product-img"
+                />
+                <img
+                  src="../img/heart-outline.svg"
+                  alt=""
+                  class="fav-icon position-absolute bg-white rounded-5 p-1"
+                />
+              </a>
+              <p class="mt-2 mb-1 fw-bold text-dark product-name"></p>
+              <div class="ratings d-flex align-items-center mb-1">
+                <div class="star-rating me-2">
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star no-rating-color"></i>
+                </div>
+                <span
+                  class="rating-value small fw-medium product-rating"
+                ></span>
+                <span class="small fw-medium">/5</span>
+              </div>
+              <div class="product-price mt-2">
+                <span class="fw-semibold text-dark product-price-text"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- TOP SELLING -->
+
+    <section>
+      <div class="container justify-content-center">
+        <div class="top-selling">
+          <h1 class="mt-4">TOP SELLING</h1>
+          <div id="topSellingPdts" class="row p-4 align-items-center">
+            <div
+              class="top-product-card-template col-lg-3 col-sm-6 mb-4 d-none"
+            >
+              <a class="top-product-link" href="#">
+                <img
+                  src=""
+                  alt="brand"
+                  class="img-fluid w-100 rounded-4 top-product-img"
+                />
+              </a>
+              <p class="mt-2 mb-1 fw-bold text-dark top-product-name"></p>
+              <div class="ratings d-flex align-items-center mb-1">
+                <div class="star-rating me-2">
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star no-rating-color"></i>
+                </div>
+                <span
+                  class="rating-value small fw-medium top-product-rating"
+                ></span>
+                <span class="small fw-medium">/5</span>
+              </div>
+              <div class="top-product-price mt-2">
+                <span
+                  class="fw-semibold text-dark top-product-price-text"
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY -->
+    <section>
+      <div class="container">
+        <div class="category mx-auto py-4 rounded-3">
+          <h1 class="fw-bold text-center">BROWSE BY DRESS STYLE</h1>
+          <div class="row p-4">
+            <div class="col-lg-6 col-sm-8 position-relative mx-auto mb-4">
+              <a href="../html/category.html"
+                ><img
+                  src="../img/category-1.png"
+                  alt="category"
+                  class="img-fluid rounded-4"
+              /></a>
+
+              <div class="position-absolute top-0 start-0 px-3 m-3 fs-4">
+                Casual
+              </div>
+            </div>
+            <div class="col-lg-6 col-sm-8 position-relative mx-auto">
+              <img
+                src="../img/category-2.png"
+                alt="category"
+                class="img-fluid rounded-4"
+              />
+              <div class="position-absolute top-0 start-0 px-3 m-3 fs-4">
+                Formal
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section>
+      <div class="reviews mx-5 my-4">
+        <div
+          class="reviews-heading d-flex justify-content-between align-items-center"
+        >
+          <h1 class="fw-bolder">OUR HAPPY CUSTOMERS</h1>
+          <div class="scroll-buttons">
+            <i
+              class="fa-solid fa-arrow-left me-3"
+              id="swiper-prev"
+              role="button"
+            ></i>
+            <i
+              class="fa-solid fa-arrow-right"
+              id="swiper-next"
+              role="button"
+            ></i>
+          </div>
+        </div>
+
+        <div class="swiper mySwiper">
+          <div id="reviews" class="swiper-wrapper">
+            <div
+              class="review-card-template swiper-slide border p-3 rounded-3 h-auto d-none"
+            >
+              <div class="ratings d-flex">
+                <div class="star-rating me-2">
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                </div>
+              </div>
+              <div class="reviewer d-flex align-items-center">
+                <p class="reviewer-name fw-bold text-dark mb-0"></p>
+                <img
+                  src="../img/verified.png"
+                  class="verified ms-2"
+                  alt="Verified"
+                />
+              </div>
+              <p class="review-text"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <!--Footer Section-->
+    <section
+      class="footer-section d-flex justify-content-center position-relative flex-column mx-5"
+    >
+      <div
+        class="footer-content text-center d-flex flex-column align-items-center mb-3"
+      >
+        <h1>Subscribe to our awesome emails.</h1>
+        <p>Get our latest offers and news straight in your inbox.</p>
+        <div
+          class="email-input position-relative border-0 rounded-2 d-flex align-items-center justify-content-center my-4 p-3"
+        >
+          <input type="email" id="email" placeholder="you@domian.com" />
+          <button class="position-absolute p-3 rounded-2">Get Started</button>
+        </div>
+      </div>
+
+      <div
+        class="social d-flex justify-content-evenly align-items-center text-center"
+      >
+        <a href="../html/index.html"> © 2025 ClosetBay, Inc. </a>
+        <div
+          class="social-icons d-flex align-items-center justify-content-center gap-3 text-center"
+        >
+          <i class="fa-brands fa-square-x-twitter"></i>
+
+          <i class="fa-brands fa-square-instagram"></i>
+        </div>
+      </div>
+
+      <div class="credits text-center my-4" style="color: gray">
+        Designed and coded with ❤️️ by Hari Krishnan S
+      </div>
+    </section>
+
+    <!-- BOOTSTRAP SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SWIPER SCRIPT -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+      defer
+    ></script>
+
+    <!-- SCRIPT -->
+    <script src="../script.js" defer></script>
+  </body>
+</html>

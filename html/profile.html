@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClosetBay</title>
+
+    <!--Icons-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- BOOTSTRAP CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!-- FONTS -->
+    <link rel="stylesheet" href="../css/fonts.css" />
+
+    <!-- SWIPER CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <!-- NAV START -->
+    <nav class="navbar navbar-expand-md bg-transparent">
+      <div class="container-fluid bg-transparent">
+        <a class="navbar-brand fw-bolder fs-2" href="../html/index.html"
+          >ClosetBay</a
+        >
+
+        <div class="d-flex align-items-center">
+          <a
+            class="nav-link d-md-none me-3 position-relative"
+            href="../html/cart.html"
+            ><img src="../img/bag.svg" alt="" class="nav-icon" />
+            <span
+              class="nav-cart-icon-badge-mobile rounded-pill bg-danger position-absolute text-center text-white"
+            ></span>
+          </a>
+          <a
+            class="nav-link d-md-none me-3 position-relative"
+            href="../html/cart.html"
+            ><img src="../img/favourite.svg" alt="" class="nav-icon" />
+            <span
+              class="nav-fav-icon-badge-mobile rounded-pill bg-danger position-absolute text-center text-white"
+            ></span>
+          </a>
+          <a
+            class="nav-link d-md-none me-3 position-relative"
+            class="nav-link"
+            href="#"
+            data-bs-toggle="modal"
+            data-bs-target="#loginModal"
+            ><img src="../img/profile.svg " alt="" class="nav-icon" />
+          </a>
+          <button
+            class="navbar-toggler fs-6"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav fs-5 align-items-start">
+            <li class="nav-item">
+              <a class="nav-link" href="../html/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../html/about.html">About</a>
+            </li>
+            <li class="nav-item d-none d-md-block">
+              <a
+                class="cart-nav-link nav-link d-flex align-items-center position-relative"
+                onclick="cartNavLink()"
+                ><img src="../img/bag.svg " alt="" class="nav-icon" />
+                <span
+                  class="nav-cart-icon-badge rounded-pill bg-danger position-absolute translate-middle text-center text-white"
+                ></span>
+              </a>
+            </li>
+            <li class="nav-item d-none d-md-block">
+              <a
+                class="nav-link d-flex align-items-center position-relative"
+                href="../html/cart.html"
+                ><img src="../img/favourite.svg " alt="" class="nav-icon" />
+                <span
+                  class="nav-fav-icon-badge rounded-pill bg-danger position-absolute translate-middle text-center text-white"
+                ></span>
+              </a>
+            </li>
+            <li class="nav-item d-none d-md-block">
+              <a
+                class="profile-nav-link nav-link d-flex align-items-center position-relative"
+                onclick="updateProfileNavLink()"
+                ><img src="../img/profile.svg " alt="" class="nav-icon" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- NAV END -->
+
+    <section class="profile-section p-3">
+      <h2>Profile</h2>
+      <div
+        class="profile-header d-flex justify-content-between align-items-center"
+      >
+        <div class="profile-title d-flex align-items-center gap-3">
+          <div class="profile-img">
+            <img src="../img/profile-img.png" alt="" />
+          </div>
+          <div class="profile-data">
+            <p class="profile-name fw-bolder mb-1"></p>
+            <p class="profile-email"></p>
+          </div>
+        </div>
+        <div class="profile-edit-btn btn btn-primary px-5 h-25">Edit</div>
+      </div>
+
+      <button
+        class="logout-btn btn btn-primary px-5 m-auto d-flex my-5"
+        onclick="logout()"
+      >
+        Logout
+      </button>
+    </section>
+
+    <hr />
+
+    <!--Footer Section-->
+    <section
+      class="footer-section d-flex justify-content-center position-relative flex-column mx-5"
+    >
+      <div
+        class="footer-content text-center d-flex flex-column align-items-center mb-3"
+      >
+        <h1>Subscribe to our awesome emails.</h1>
+        <p>Get our latest offers and news straight in your inbox.</p>
+        <div
+          class="email-input position-relative border-0 rounded-2 d-flex align-items-center justify-content-center my-4 p-3"
+        >
+          <input type="email" id="email" placeholder="you@domian.com" />
+          <button class="position-absolute p-3 rounded-2">Get Started</button>
+        </div>
+      </div>
+
+      <div
+        class="social d-flex justify-content-evenly align-items-center text-center"
+      >
+        <a href="../html/index.html"> © 2025 ClosetBay, Inc. </a>
+        <div
+          class="social-icons d-flex align-items-center justify-content-center gap-3 text-center"
+        >
+          <i class="fa-brands fa-square-x-twitter"></i>
+
+          <i class="fa-brands fa-square-instagram"></i>
+        </div>
+      </div>
+
+      <div class="credits text-center my-4" style="color: gray">
+        Designed and coded with ❤️️ by Hari Krishnan S
+      </div>
+    </section>
+
+    <!-- BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SCRIPT -->
+    <script src="../script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,376 @@
+/* Reset Default CSS */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Bricolage Grotesque", sans-serif;
+  max-width: 1440px;
+  margin: auto;
+  /* animation: fadeIn 1s ease-in forwards; */
+}
+
+/* Screen Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Screen Fade-out Animation */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+/* snackbar animation */
+@keyframes snackFadeIn {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes snackFadeOut {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+.snackbar {
+  visibility: hidden;
+  z-index: 1;
+  bottom: 30px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: clamp(15rem, 20vw, 40rem);
+  z-index: 2000;
+}
+
+.snackbar.show {
+  visibility: visible;
+  animation: snackFadeIn 0.5s, snackFadeOut 0.5s 2.5s;
+}
+
+.snackbar img {
+  width: clamp(6rem, 3vw, 8rem);
+  height: clamp(4rem, 5vw, 8rem);
+  object-fit: fill;
+}
+
+.snackbar h6 {
+  font-size: clamp(0.8rem, 2vw, 0.8rem);
+}
+
+.hero-section {
+  background-color: wheat;
+}
+
+.hero-section h1,
+.cart-title h1 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 900;
+}
+
+.nav-link.active i {
+  color: black !important;
+}
+
+.hero-section p {
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+}
+
+.hero-features h1 {
+  font-size: clamp(1.8rem, 2.5vw, 3rem);
+}
+
+.hero-features p {
+  font-size: clamp(1rem, 1vw, 2.5rem);
+}
+
+.hero-section .hero-img img {
+  width: clamp(15rem, 40vw, 70rem);
+}
+
+.new-arrival h1 {
+  font-size: clamp(1.5rem, 3vw, 4rem);
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+}
+
+.new-arrival p {
+  font-size: clamp(1rem, 1vw, 1.5rem);
+  font-weight: 700;
+}
+
+.top-selling h1 {
+  font-size: clamp(1rem, 7vw, 3rem);
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+}
+
+.top-selling p {
+  font-size: clamp(1rem, 1vw, 1.5rem);
+  font-weight: 700;
+}
+
+.product-price {
+  font-size: clamp(1rem, 1vw, 1.5rem);
+  font-weight: 700;
+}
+
+.product-name,
+.top-product-name,
+.casual-pdts-name {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.rating-color {
+  color: #fbc634;
+  font-size: clamp(0.8rem, 1vw, 1.5rem);
+}
+
+.no-rating-color {
+  font-size: clamp(0.8rem, 1vw, 1.5rem);
+}
+
+.fav-icon {
+  right: 5%;
+  transform: translate(0%, 30%);
+  width: clamp(1.5rem, 2vw, 1.8rem);
+}
+
+.nav-icon {
+  width: clamp(1.5rem, 2vw, 1.8rem);
+}
+
+.nav-cart-icon-badge,
+.nav-fav-icon-badge {
+  right: -30%;
+  width: clamp(1.2rem, 1.4vw, 2rem);
+  font-size: clamp(0.8rem, 1vw, 1rem);
+}
+
+.nav-cart-icon-badge-mobile,
+.nav-fav-icon-badge-mobile {
+  right: -20%;
+  transform: translate(0%, -20%);
+  width: clamp(1.2rem, 2vw, 1.5rem);
+  font-size: clamp(0.7rem, 1vw, 1rem);
+}
+
+.category {
+  background-color: #f0f0f0;
+}
+
+.category h1 {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+}
+
+.reviews h1 {
+  font-size: clamp(1rem, 2vw, 5rem);
+}
+
+.verified {
+  height: 1em;
+}
+
+.subscribe h1 {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 900;
+  color: white;
+  width: clamp(20rem, 5vw, 30rem);
+}
+
+.email input::placeholder {
+  font-size: clamp(0.85rem, 0.5vw, 2rem);
+}
+
+/*footer section*/
+
+.footer-section .footer-content h1 {
+  font-size: clamp(1rem, 7vw, 3rem);
+  color: black;
+}
+
+.footer-section .footer-content p {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: black;
+}
+
+.email-input {
+  width: clamp(18rem, 25vw, 30rem);
+  background-color: #1a1a1a;
+}
+
+.email-input input {
+  width: clamp(18rem, 40vw, 30rem);
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  font-size: clamp(0.8rem, 1vw, 1.8rem);
+  font-family: "Bricolage Grotesque", sans-serif;
+  padding-right: clamp(8rem, 10vw, 15rem);
+}
+
+.email-input input::placeholder {
+  color: white;
+  font-size: clamp(0.8rem, 1vw, 1.8rem);
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+.email-input button {
+  right: 3%;
+  background-color: black;
+  width: clamp(8rem, 10vw, 15rem);
+  border: 0.1rem solid #2e2e2e;
+  color: white;
+  line-height: 0;
+  font-size: clamp(0.8rem, 1vw, 1.8rem);
+  cursor: pointer;
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+.footer-section .social a {
+  color: black;
+  text-decoration: none;
+  font-size: clamp(1rem, 1vw, 1.5rem);
+}
+
+.footer-section .social .social-icons {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.footer-section .social .social-icons .dark-icon-button,
+.footer-section .social .social-icons .light-icon-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+/* pdt details page */
+
+.side-img img {
+  cursor: pointer;
+}
+
+.pdt-content-section {
+  display: flex;
+}
+
+.side-img {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-img img {
+  width: clamp(20rem, 30vw, 35rem);
+  height: auto;
+}
+
+.side-img img {
+  width: clamp(4rem, 5vw, 12rem);
+  height: clamp(4rem, 5vw, 12rem);
+  object-fit: cover;
+}
+
+.size-container {
+  color: black;
+}
+
+.button-class.btn.btn-light:hover {
+  background-color: #f8f9fa;
+  color: #000;
+  box-shadow: none;
+  outline: none;
+  border-color: #f8f9fa;
+}
+
+.default-selection {
+  background-color: #000 !important;
+  color: #fff !important;
+  border: 1px solid #000 !important;
+}
+
+.add-cart-btn {
+  color: white;
+}
+
+.pdt-content h1 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 900;
+}
+
+.pdt-cost-price {
+  color: grey;
+}
+
+.size-container button {
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  width: clamp(5rem, 5vw, 10rem);
+}
+
+.item img {
+  width: clamp(6rem, 10vw, 15rem);
+  height: auto;
+}
+
+.checkout-btn {
+  color: white;
+}
+
+.fa-trash {
+  color: red;
+}
+
+.cart-empty img {
+  width: clamp(15rem, 10vw, 40rem);
+}
+
+.profile-img img {
+  width: clamp(6rem, 6vw, 10rem);
+  height: clamp(6rem, 6vw, 10rem);
+}
+
+.profile-name {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+.profile-email {
+  font-size: clamp(0.8rem, 2vw, 1.1rem);
+  color: gray;
+}

@@ -1,0 +1,95 @@
+<!-- LOGIN POPUP BOX -->
+<div class="modal fade" id="loginModal" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <div class="row g-0">
+          <div
+            class="col-12 col-md-6 p-4 d-flex flex-column justify-content-center"
+          >
+            <img
+              src="../img/login-mobile-img.svg"
+              alt="Login Image"
+              class="w-100 h-100 p-2 d-block d-md-none mb-3"
+            />
+
+            <h1 class="form-title text-center fw-bold">Sign Up</h1>
+            <p class="form-desc text-center">
+              Create your account. It only takes a minute.
+            </p>
+            <form>
+              <div class="fNameForm form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstNameInput"
+                  placeholder="First Name"
+                />
+                <label for="firstNameInput">First Name</label>
+              </div>
+
+              <div class="lNameForm form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastNameInput"
+                  placeholder="Last Name"
+                />
+                <label for="lastNameInput">Last Name</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="emailInput"
+                  placeholder="Email"
+                />
+                <label for="emailInput">Email</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="pwdInput"
+                  placeholder="Password"
+                />
+                <label for="pwdInput">Password</label>
+              </div>
+
+              <button
+                type="button"
+                class="formBtn btn btn-primary w-100"
+                onclick="performAction()"
+              >
+                Sign Up
+              </button>
+            </form>
+            <div
+              class="switchFormTextDesc d-flex mt-3 align-items-center justify-content-center"
+            >
+              <span id="switchFormDescription">Already have an account?</span>
+              <h6
+                id="switchFormAction"
+                class="ms-2 my-0 fw-bolder"
+                style="cursor: pointer"
+                onclick="switchForm()"
+              >
+                Login
+              </h6>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 d-none d-md-block">
+            <img
+              src="../img/login-img.svg"
+              alt="Login Image"
+              class="w-100 h-100 p-2"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

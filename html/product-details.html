@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClosetBay</title>
+
+    <!--Icons-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- BOOTSTRAP CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!-- FONTS -->
+    <link rel="stylesheet" href="../css/fonts.css" />
+  </head>
+  <body>
+    <!-- NAV START -->
+    <nav class="navbar navbar-expand-md bg-transparent">
+      <div class="container-fluid bg-transparent">
+        <a class="navbar-brand fw-bolder fs-2" href="../html/index.html"
+          >ClosetBay</a
+        >
+
+        <div class="d-flex align-items-center">
+          <a
+            class="nav-link d-md-none me-3 position-relative"
+            href="../html/cart.html"
+            ><img src="../img/bag.svg" alt="" class="nav-icon" />
+            <span
+              class="nav-cart-icon-badge-mobile rounded-pill bg-danger position-absolute text-center text-white"
+            ></span>
+          </a>
+          <a
+            class="nav-link d-md-none me-3 position-relative"
+            href="../html/cart.html"
+            ><img src="../img/favourite.svg" alt="" class="nav-icon" />
+            <span
+              class="nav-fav-icon-badge-mobile rounded-pill bg-danger position-absolute text-center text-white"
+            ></span>
+          </a>
+          <a
+            class="nav-link d-md-none me-3 position-relative"
+            class="nav-link"
+            href="#"
+            data-bs-toggle="modal"
+            data-bs-target="#loginModal"
+            ><img src="../img/profile.svg " alt="" class="nav-icon" />
+          </a>
+          <button
+            class="navbar-toggler fs-6"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav fs-5 align-items-start">
+            <li class="nav-item">
+              <a class="nav-link" href="../html/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../html/about.html">About</a>
+            </li>
+            <li class="nav-item d-none d-md-block">
+              <a
+                class="cart-nav-link nav-link d-flex align-items-center position-relative"
+                onclick="cartNavLink()"
+                ><img src="../img/bag.svg " alt="" class="nav-icon" />
+                <span
+                  class="nav-cart-icon-badge rounded-pill bg-danger position-absolute translate-middle text-center text-white"
+                ></span>
+              </a>
+            </li>
+            <li class="nav-item d-none d-md-block">
+              <a
+                class="nav-link d-flex align-items-center position-relative"
+                href="../html/cart.html"
+                ><img src="../img/favourite.svg " alt="" class="nav-icon" />
+                <span
+                  class="nav-fav-icon-badge rounded-pill bg-danger position-absolute translate-middle text-center text-white"
+                ></span>
+              </a>
+            </li>
+            <li class="nav-item d-none d-md-block">
+              <a
+                class="profile-nav-link nav-link d-flex align-items-center position-relative"
+                onclick="updateProfileNavLink()"
+                ><img src="../img/profile.svg " alt="" class="nav-icon" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- NAV END -->
+
+    <section
+      class="pdt-content-section mb-5 mx-5 d-flex flex-md-row flex-column"
+    >
+      <div
+        class="pdt-gallery d-flex flex-lg-row flex-column-reverse me-md-3 mb-2"
+      >
+        <div
+          class="side-img d-flex flex-lg-column me-lg-3 flex-row gap-2 justify-content-lg-start justify-content-center"
+        ></div>
+
+        <div
+          class="main-img mb-3 d-flex justify-content-lg-start justify-content-center"
+        >
+          <img src="" alt="" class="rounded-4" id="mainImg" />
+        </div>
+      </div>
+
+      <div class="pdt-content text-md-start text-center">
+        <h1 class="pdt-details-name"></h1>
+
+        <div
+          class="d-flex justify-content-md-start justify-content-center align-items-center"
+        >
+          <div class="star-rating me-2">
+            <i class="fa fa-star rating-color"></i>
+            <i class="fa fa-star rating-color"></i>
+            <i class="fa fa-star rating-color"></i>
+            <i class="fa fa-star rating-color"></i>
+            <i class="fa fa-star no-rating-color"></i>
+          </div>
+          <span class="rating-value small fw-medium pdt-details-rating"></span>
+          <span class="small fw-medium">/5</span>
+        </div>
+
+        <div class="product-price-details mt-2">
+          <span class="fw-bold text-dark me-2 pdt-details-selling-price"></span>
+          <span
+            class="pdt-cost-price fw-bold text-decoration-line-through pdt-details-cost-price"
+          ></span>
+          <p class="pdt-details-desc"></p>
+        </div>
+
+        <hr />
+
+        <div class="pdt-size">
+          <h6>Choose Size</h6>
+          <div
+            class="size-container d-flex gap-3 justify-content-md-start justify-content-center"
+          >
+            <button class="size-btn button-class btn btn-light rounded-pill">
+              Small
+            </button>
+            <button class="size-btn button-class btn btn-light rounded-pill">
+              Medium
+            </button>
+            <button
+              class="default-selection size-btn button-class btn btn-light rounded-pill"
+            >
+              Large
+            </button>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="add-cart d-flex gap-3 flex-wrap">
+          <!-- <div
+            class="container bg-light d-flex align-items-center w-100 rounded-pill"
+          >
+            <button class="btn m-auto" id="decr">-</button>
+            <h6 class="m-auto pdt-details-quantity" id="quantity"></h6>
+            <button class="btn m-auto" id="incr">+</button>
+          </div> -->
+          <button
+            class="add-cart-btn btn bg-black text-white rounded-pill w-50 m-auto"
+            ,
+            onclick="addToCart(); snackBarAnimation();"
+          >
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOAST MESSAGE -->
+    <div
+      class="snackbar bg-black text-light text-center p-2 m-auto d-flex align-items-center rounded-2"
+    >
+      <img
+        src="../img/pdt-1/1.jpg"
+        alt=""
+        class="rounded-2 snackbar-img img-fluid me-2"
+      />
+      <h6 id="snackbar-content" class="text-start m-auto">
+        URB_N Men Regular Fit Printed Resort Shirt added to cart
+      </h6>
+    </div>
+
+    <!-- PRODUCT REVIEWS -->
+    <section class="mb-5">
+      <div class="container">
+        <h2>All Reviews</h2>
+        <div
+          class="row row-cols-1 row-cols-sm-1 row-cols-lg-2 g-2 g-lg-3"
+          id="reviewContainer"
+        >
+          <div class="pdt-review-template d-none col">
+            <div class="border rounded-4 p-3 h-100">
+              <div class="ratings d-flex">
+                <div class="star-rating me-2">
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                </div>
+              </div>
+              <div class="reviewer d-flex align-items-center">
+                <p class="fw-bold text-dark mb-0 pdt-reviewer-name"></p>
+                <img
+                  src="../img/verified.png"
+                  class="verified ms-2"
+                  alt="Verified"
+                />
+              </div>
+              <p class="pdt-reviewer-review"></p>
+              <p class="pdt-review-date"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <!--Footer Section-->
+    <section
+      class="footer-section d-flex justify-content-center position-relative flex-column mx-5"
+    >
+      <div
+        class="footer-content text-center d-flex flex-column align-items-center mb-3"
+      >
+        <h1>Subscribe to our awesome emails.</h1>
+        <p>Get our latest offers and news straight in your inbox.</p>
+        <div
+          class="email-input position-relative border-0 rounded-2 d-flex align-items-center justify-content-center my-4 p-3"
+        >
+          <input type="email" id="email" placeholder="you@domian.com" />
+          <button class="position-absolute p-3 rounded-2">Get Started</button>
+        </div>
+      </div>
+
+      <div
+        class="social d-flex justify-content-evenly align-items-center text-center"
+      >
+        <a href="../html/index.html"> © 2025 ClosetBay, Inc. </a>
+        <div
+          class="social-icons d-flex align-items-center justify-content-center gap-3 text-center"
+        >
+          <i class="fa-brands fa-square-x-twitter"></i>
+
+          <i class="fa-brands fa-square-instagram"></i>
+        </div>
+      </div>
+
+      <div class="credits text-center my-4" style="color: gray">
+        Designed and coded with ❤️️ by Hari Krishnan S
+      </div>
+    </section>
+
+    <!-- BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SCRIPT -->
+    <script src="../script.js" defer></script>
+  </body>
+</html>
