@@ -23,32 +23,32 @@
     />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="style.css" />
 
     <!-- FONTS -->
-    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="stylesheet" href="fonts.css" />
+
+    <!-- SWIPER CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <!-- NAV START -->
     <nav class="navbar navbar-expand-md bg-transparent">
       <div class="container-fluid bg-transparent">
-        <a class="navbar-brand fw-bolder fs-2" href="../index.html"
-          >ClosetBay</a
-        >
+        <a class="navbar-brand fw-bolder fs-2" href="index.html">ClosetBay</a>
 
         <div class="d-flex align-items-center">
-          <a
-            class="nav-link d-md-none me-3 position-relative"
-            href="../html/cart.html"
-            ><img src="../img/bag.svg" alt="" class="nav-icon" />
+          <a class="nav-link d-md-none me-3 position-relative" href="cart.html"
+            ><img src="img/bag.svg" alt="" class="nav-icon" />
             <span
               class="nav-cart-icon-badge-mobile rounded-pill bg-danger position-absolute text-center text-white"
             ></span>
           </a>
-          <a
-            class="nav-link d-md-none me-3 position-relative"
-            href="../html/cart.html"
-            ><img src="../img/favourite.svg" alt="" class="nav-icon" />
+          <a class="nav-link d-md-none me-3 position-relative" href="cart.html"
+            ><img src="img/favourite.svg" alt="" class="nav-icon" />
             <span
               class="nav-fav-icon-badge-mobile rounded-pill bg-danger position-absolute text-center text-white"
             ></span>
@@ -59,7 +59,7 @@
             href="#"
             data-bs-toggle="modal"
             data-bs-target="#loginModal"
-            ><img src="../img/profile.svg " alt="" class="nav-icon" />
+            ><img src="img/profile.svg " alt="" class="nav-icon" />
           </a>
           <button
             class="navbar-toggler fs-6"
@@ -77,16 +77,16 @@
         >
           <ul class="navbar-nav fs-5 align-items-start">
             <li class="nav-item">
-              <a class="nav-link" href="../index.html">Home</a>
+              <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../html/about.html">About</a>
+              <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item d-none d-md-block">
               <a
                 class="cart-nav-link nav-link d-flex align-items-center position-relative"
                 onclick="cartNavLink()"
-                ><img src="../img/bag.svg " alt="" class="nav-icon" />
+                ><img src="img/bag.svg " alt="" class="nav-icon" />
                 <span
                   class="nav-cart-icon-badge rounded-pill bg-danger position-absolute translate-middle text-center text-white"
                 ></span>
@@ -96,7 +96,7 @@
               <a
                 class="nav-link d-flex align-items-center position-relative"
                 href="#"
-                ><img src="../img/favourite.svg " alt="" class="nav-icon" />
+                ><img src="img/favourite.svg " alt="" class="nav-icon" />
                 <span
                   class="nav-fav-icon-badge rounded-pill bg-danger position-absolute translate-middle text-center text-white"
                 ></span>
@@ -106,7 +106,7 @@
               <a
                 class="profile-nav-link nav-link d-flex align-items-center position-relative"
                 onclick="updateProfileNavLink()"
-                ><img src="../img/profile.svg " alt="" class="nav-icon" />
+                ><img src="img/profile.svg " alt="" class="nav-icon" />
               </a>
             </li>
           </ul>
@@ -115,55 +115,23 @@
     </nav>
     <!-- NAV END -->
 
-    <section class="page-path d-flex gap-2 mx-3">
-      <h6>Home</h6>
-      <h6>></h6>
-      <h6>Casual</h6>
-    </section>
-
-    <section class="pdt-grid mx-3 mb-5">
-      <div
-        class="category-title d-flex justify-content-between align-items-center"
-      >
-        <h3>Casual</h3>
-        <p class="mb-0">Showing 1–10 of 100 Products</p>
-      </div>
-
-      <div
-        id="categoryPdts"
-        class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2 g-lg-3"
-      >
-        <div class="casual-pdts-template col d-none">
-          <a class="casual-pdts-link" href="#">
-            <img
-              src=""
-              alt="brand"
-              class="img-fluid w-100 rounded-4 casual-pdts-img"
-          /></a>
-
-          <p
-            class="mt-2 mb-1 fw-bold text-dark casual-pdts-name"
-            id="pdtNames"
-          ></p>
-
-          <div class="ratings d-flex align-items-center mb-1">
-            <div class="star-rating me-2">
-              <i class="fa fa-star rating-color"></i>
-              <i class="fa fa-star rating-color"></i>
-              <i class="fa fa-star rating-color"></i>
-              <i class="fa fa-star rating-color"></i>
-              <i class="fa fa-star no-rating-color"></i>
-            </div>
-            <span class="rating-value small fw-medium casual-pdts-rating"></span
-            ><span class="small fw-medium">/5</span>
-          </div>
-
-          <div class="product-price mt-2">
-            <span class="fw-semibold text-dark casual-pdts-price"></span>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div class="about-section p-3">
+      <h1>About ClosetBay</h1>
+      <p>
+        ClosetBay is where classic style meets modern masculinity. Founded with
+        a passion for refined fashion, we bring men an exclusive collection of
+        clothing and accessories that blend timeless design with contemporary
+        trends. Whether you're dressing for the boardroom, a weekend getaway, or
+        a night out, ClosetBay has the wardrobe essentials to keep you looking
+        sharp and feeling confident. At ClosetBay, we believe that great style
+        starts with quality. Every piece in our collection is thoughtfully
+        curated to reflect durability, comfort, and effortless sophistication.
+        From casual wear to tailored fits, our products are designed to help you
+        express your unique personality—one outfit at a time. We're more than
+        just a clothing brand—we're your style partner. Join the ClosetBay
+        movement and redefine what it means to dress well.
+      </p>
+    </div>
 
     <hr />
 
@@ -187,7 +155,7 @@
       <div
         class="social d-flex justify-content-evenly align-items-center text-center"
       >
-        <a href="../index.html"> © 2025 ClosetBay, Inc. </a>
+        <a href="index.html"> © 2025 ClosetBay, Inc. </a>
         <div
           class="social-icons d-flex align-items-center justify-content-center gap-3 text-center"
         >
@@ -206,6 +174,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- SCRIPT -->
-    <script src="../script.js" defer></script>
+    <script src="script.js" defer></script>
   </body>
 </html>

@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const container = document.getElementById("newArrivalPdtList");
   const template = document.querySelector(".product-card-template");
 
-  fetch("../data/new-arrival-pdts.json")
+  fetch("new-arrival-pdts.json")
     .then((res) => res.json())
     .then((products) => {
       products.forEach((product) => {
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           card.querySelector(
             ".product-link"
-          ).href = `../html/product-details.html?id=${product.id}`;
+          ).href = `product-details.html?id=${product.id}`;
           card.querySelector(".product-img").src = product.img;
           card.querySelector(".product-img").alt = product.name;
           card.querySelector(".product-name").textContent = product.name;
@@ -85,9 +85,9 @@ document.addEventListener("DOMContentLoaded", function () {
             favIcon.classList.toggle("fav-active");
 
             if (favIcon.classList.contains("fav-active")) {
-              favIcon.src = "../img/heart-fill.svg";
+              favIcon.src = "img/heart-fill.svg";
             } else {
-              favIcon.src = "../img/heart-outline.svg";
+              favIcon.src = "img/heart-outline.svg";
             }
           });
 
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const container = document.getElementById("topSellingPdts");
   const template = document.querySelector(".top-product-card-template");
 
-  fetch("../data/top-selling-pdts.json")
+  fetch("top-selling-pdts.json")
     .then((res) => res.json())
     .then((products) => {
       products.forEach((product) => {
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           card.querySelector(
             ".top-product-link"
-          ).href = `../html/product-details.html?id=${product.id}`;
+          ).href = `product-details.html?id=${product.id}`;
           card.querySelector(".top-product-img").src = product.img;
           card.querySelector(".top-product-img").alt = product.name;
           card.querySelector(".top-product-name").textContent = product.name;
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const reviewBox = document.getElementById("reviews");
   const template = document.querySelector(".review-card-template");
 
-  fetch("../data/home-reviews.json")
+  fetch("home-reviews.json")
     .then((res) => res.json())
     .then((reviewsList) => {
       reviewsList.forEach((rev) => {
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
 const params = new URLSearchParams(window.location.search);
 const productId = parseInt(params.get("id"));
 
-fetch("../data/pdt-details.json")
+fetch("pdt-details.json")
   .then((res) => res.json())
   .then((products) => {
     const product = products.find((p) => p.id === productId);
@@ -247,7 +247,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const template = document.querySelector(".pdt-review-template");
 
-  fetch("../data/pdt-reviews.json")
+  fetch("pdt-reviews.json")
     .then((res) => res.json())
     .then((pdtReviews) => {
       pdtReviews.forEach((rev) => {
@@ -269,7 +269,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //add to cart
 function addToCart() {
-  fetch("../data/pdt-details.json")
+  fetch("pdt-details.json")
     .then((res) => res.json())
     .then((products) => {
       const product = products.find((p) => p.id === productId);
@@ -500,7 +500,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const categoryPdtsContainer = document.getElementById("categoryPdts");
   const template = document.querySelector(".casual-pdts-template");
 
-  fetch("../data/category-casual-pdts.json")
+  fetch("category-casual-pdts.json")
     .then((res) => res.json())
     .then((casPdts) => {
       casPdts.forEach((pdt) => {
@@ -512,7 +512,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           card.querySelector(
             ".casual-pdts-link"
-          ).href = `../html/product-details.html?id=${pdt.id}`;
+          ).href = `product-details.html?id=${pdt.id}`;
           card.querySelector(".casual-pdts-img").src = pdt.img;
           card.querySelector(".casual-pdts-name").textContent = pdt.name;
           card.querySelector(".casual-pdts-rating").textContent = pdt.rating;
@@ -586,7 +586,7 @@ function snackBarAnimation() {
 //     });
 // });
 
-fetch("../html/login-modal.html")
+fetch("login-modal.html")
   .then((response) => response.text())
   .then((html) => {
     const loginModalContainer = document.getElementById("loginModalContainer");
@@ -732,7 +732,7 @@ function updateProfileNavLink() {
   const loggedInUser = users.find((user) => user.loggedIn === true);
 
   if (loggedInUser) {
-    element.setAttribute("href", "../html/profile.html");
+    element.setAttribute("href", "profile.html");
   } else if (element) {
     const modalElement = document.getElementById("loginModal");
     if (modalElement) {
@@ -750,7 +750,7 @@ function cartNavLink() {
   const loggedInUser = users.find((user) => user.loggedIn === true);
 
   if (loggedInUser && element) {
-    element.setAttribute("href", "../html/cart.html");
+    element.setAttribute("href", "cart.html");
   } else if (element) {
     const modalElement = document.getElementById("loginModal");
     if (modalElement) {
